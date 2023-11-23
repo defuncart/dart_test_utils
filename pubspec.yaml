@@ -1,0 +1,16 @@
+name: dart_test_utils
+description: A package contain dart test utils.
+version: 0.0.1
+publish_to: 'none'
+homepage:
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  args:
+  path:
+
+dev_dependencies:
+  test:
+  lints:
