@@ -5,8 +5,11 @@ import 'package:path/path.dart' as p;
 class OrganizeTestFolder {
   static Future<void> execute({
     required bool applyChanges,
+    required bool setExitIfChanged,
     bool verbose = true,
   }) async {
+    assert(applyChanges != true && setExitIfChanged != true);
+
     if (verbose) {
       print('Verbose mode is enabled. More information will be logged.');
     }
@@ -48,6 +51,8 @@ class OrganizeTestFolder {
             print('Moving ${testFile.path} to $expectedTestFilepath');
             await File(expectedTestFilepath).create(recursive: true);
             await File(testFile.path).rename(expectedTestFilepath);
+          } else if (setExitIfChanged) {
+            exit(1);
           }
         }
       }
