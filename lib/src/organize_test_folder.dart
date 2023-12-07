@@ -11,7 +11,7 @@ class OrganizeTestFolder {
     assert(applyChanges != true && setExitIfChanged != true);
 
     if (verbose) {
-      print('Verbose mode is enabled. More information will be logged.');
+      print('Verbose mode is enabled. More information will be logged.\n');
     }
 
     final testDir = Directory('test');
@@ -24,9 +24,10 @@ class OrganizeTestFolder {
 
     if (verbose) {
       print('All dart files in lib:');
-      print(libFiles);
+      libFiles.verbosePrint();
       print('All dart files in test:');
-      print(testFiles);
+      testFiles.verbosePrint();
+      print('');
     }
 
     for (final testFile in testFiles) {
@@ -56,6 +57,14 @@ class OrganizeTestFolder {
           }
         }
       }
+    }
+  }
+}
+
+extension on Iterable<File> {
+  void verbosePrint() {
+    for (final file in this) {
+      print(file.path);
     }
   }
 }

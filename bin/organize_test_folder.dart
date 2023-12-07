@@ -7,7 +7,7 @@ void main(List<String> arguments) async {
   final parser = ArgParser()
     ..addSeparator('Organizes files in /test to match /lib.')
     ..addFlag('help', abbr: 'h', negatable: false, defaultsTo: false, help: 'Displays help.')
-    ..addFlag('verbose', abbr: 'v', defaultsTo: true, negatable: false, help: 'Logs verbose output')
+    ..addFlag('verbose', abbr: 'v', defaultsTo: false, negatable: false, help: 'Logs verbose output')
     ..addSeparator('')
     ..addFlag('apply', defaultsTo: false, negatable: false, help: 'Applies file changes')
     ..addFlag(
@@ -23,7 +23,7 @@ void main(List<String> arguments) async {
       print(parser.usage);
       exit(0);
     } else {
-      final verbose = args['verbose'] ?? true;
+      final verbose = args['verbose'] ?? false;
       final applyChanges = args['apply'] ?? false;
       final setExitIfChanged = args['set-exit-if-changed'] ?? false;
 
