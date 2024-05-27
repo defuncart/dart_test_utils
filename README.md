@@ -1,21 +1,14 @@
 # dart_test_utils
 
-A dart tool contain test utils.
+A dart tool containing test utils.
 
 ## Installation
 
-The tool can be installed via `dart pub global` by activate the package on your local machine:
-
-```sh
-dart pub global activate --source git https://github.com/defuncart/dart_test_utils
-```
-
-Similarly, the tool can be uninstalled via `dart pub global deactivate dart_test_utils`. Alternatively, the tool can be a depended upon in a dart/flutter project:
+The tool can be installed by activating the package on your local machine: `dart pub global activate dart_test_utils`. Similarly, the tool can be uninstalled via `dart pub global deactivate dart_test_utils`. Alternatively, the tool can be a depended upon in a dart/flutter project:
 
 ```yaml
 dev_dependencies:
     dart_test_utils:
-        git: https://github.com/defuncart/dart_test_utils
 ```
 
 ## Organize Test Folder
@@ -57,4 +50,3 @@ The option `--set-exit-if-changed` can be used in a CI pipeline to fail when the
 
 - When a file should be moved, if a file exists at the target location, then the existing file will be overwritten.
 - If a moved file contains relative paths (i.e. `import '../mocks.dart'`), then the path will need manual resolution.
-

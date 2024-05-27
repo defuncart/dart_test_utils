@@ -1,15 +1,16 @@
 name: dart_test_utils
-description: A package contain dart test utils.
+description: A package containing dart test utils.
 version: 0.0.1
-publish_to: 'none'
-homepage:
+homepage: https://github.com/defuncart/dart_test_utils
+repository: https://github.com/defuncart/dart_test_utils
+issue_tracker: https://github.com/defuncart/dart_test_utils/issues
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  args:
-  path:
+  args: ^2.4.2
+  path: ^1.8.3
 
 dev_dependencies:
   test:
